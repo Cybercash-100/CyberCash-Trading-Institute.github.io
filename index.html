@@ -129,35 +129,32 @@
             margin: 0 auto;
         }
 
-        /* Application Form */
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 500px;
+        /* Application Form (Google Form Embed Styling) */
+        .apply-form-container {
+            max-width: 800px;
             margin: 0 auto;
-            gap: 1rem;
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
-        form input, form select {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
+        .apply-form-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #1a1a2e;
         }
 
-        form button {
-            background: #f9a826;
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.3s;
+        .apply-form-container p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #333;
         }
 
-        form button:hover {
-            background: #e09722;
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         /* FAQ */
@@ -217,6 +214,10 @@
             .hero-content h1 {
                 font-size: 2rem;
             }
+
+            iframe {
+                height: 700px;
+            }
         }
     </style>
 </head>
@@ -245,129 +246,4 @@
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>Alpha Trading Institute has helped 500+ students achieve consistent profits through personalized mentorship. Our proven strategies and hands-on coaching ensure you get real-world trading experience.</p>
-    </section>
-
-    <!-- Programs Section -->
-    <section id="programs" class="programs">
-        <h2>Our Mentorship Programs</h2>
-        <div class="program-cards">
-            <div class="card">
-                <h3>Beginner Program</h3>
-                <p>Learn the fundamentals of trading, risk management, and basic strategies.</p>
-                <span>$99/month</span>
-            </div>
-            <div class="card">
-                <h3>Advanced Program</h3>
-                <p>Master advanced technical analysis, algorithmic trading, and portfolio management.</p>
-                <span>$299/month</span>
-            </div>
-            <div class="card">
-                <h3>VIP Program</h3>
-                <p>1-on-1 coaching, live trading sessions, and exclusive community access.</p>
-                <span>$599/month</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <h2>Success Stories</h2>
-        <div class="testimonial-card">
-            <p>"Alpha Trading changed my life! I went from losing money to consistently profitable in just 3 months."</p>
-            <span>- John D., Forex Trader</span>
-        </div>
-        <div class="testimonial-card" style="margin-top: 1.5rem;">
-            <p>"The mentorship program is worth every penny. The personalized feedback accelerated my learning curve."</p>
-            <span>- Sarah K., Crypto Trader</span>
-        </div>
-    </section>
-
-    <!-- Application Form -->
-    <section id="apply" class="apply">
-        <h2>Apply for Mentorship</h2>
-        <form id="mentorship-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone (Optional)">
-            <select required>
-                <option value="">Select Program</option>
-                <option value="beginner">Beginner Program ($99/month)</option>
-                <option value="advanced">Advanced Program ($299/month)</option>
-                <option value="vip">VIP Program ($599/month)</option>
-            </select>
-            <textarea placeholder="Your trading experience (Optional)" rows="4"></textarea>
-            <button type="submit">Submit Application</button>
-        </form>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <button class="faq-question">How long is the mentorship program?</button>
-            <div class="faq-answer">
-                <p>Most students complete the program in 3–6 months, but you can learn at your own pace.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Do you offer refunds?</button>
-            <div class="faq-answer">
-                <p>Yes! We offer a 14-day money-back guarantee if you're not satisfied.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">What markets do you cover?</button>
-            <div class="faq-answer">
-                <p>Forex, stocks, crypto, and commodities.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Alpha Trading Institute. All rights reserved.</p>
-        <div style="margin-top: 1rem;">
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-telegram"></i></a>
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-youtube"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        // Form Submission (Example: Log to console + show alert)
-        document.getElementById('mentorship-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            console.log('Application Submitted:', data);
-            alert('Thank you! Your application has been submitted. We’ll contact you within 24 hours.');
-            this.reset();
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.toggle('active');
-                const answer = button.nextElementSibling;
-                if (answer.style.maxHeight) {
-                    answer.style.maxHeight = null;
-                } else {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-
-</html>
+        <p>Alpha Trading Institute has helped 500+ students achieve consistent profits through personalized mentorship. Our proven strategies and hands-on coaching ensure you get
