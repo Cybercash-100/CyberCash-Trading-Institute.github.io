@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCash Trading Institute | Mentorship Programs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: #1a1a2e;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #f9a826;
+        }
+
+        .cta-button {
+            background: #f9a826;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #e09722;
+        }
+
+        section {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Programs Section */
+        .program-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #1a1a2e;
+        }
+
+        .card span {
+            font-weight: bold;
+            color: #f9a826;
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Application Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        form input, form select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background: #f9a826;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #e09722;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .faq-question {
+            background: #f9f9f9;
+            color: #1a1a2e;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:after {
+            content: '\002B';
+            font-weight: bold;
+        }
+
+        .faq-question.active:after {
+            content: '\2212';
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f9f9f9;
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">CyberCash Trading Institute</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#apply" class="cta-button">Apply Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Master the Markets with Expert Mentorship</h1>
+            <p>Join our elite trading program and transform your skills in forex, stocks, and crypto.</p>
+            <a href="#apply" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Alpha Trading Institute has helped 500+ students achieve consistent profits through personalized mentorship. Our proven strategies and hands-on coaching ensure you get real-world trading experience.</p>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <h2>Our Mentorship Programs</h2>
+        <div class="program-cards">
+            <div class="card">
+                <h3>Beginner Program</h3>
+                <p>Learn the fundamentals of trading, risk management, and basic strategies.</p>
+                <span>$99/month</span>
+            </div>
+            <div class="card">
+                <h3>Advanced Program</h3>
+                <p>Master advanced technical analysis, algorithmic trading, and portfolio management.</p>
+                <span>$299/month</span>
+            </div>
+            <div class="card">
+                <h3>VIP Program</h3>
+                <p>1-on-1 coaching, live trading sessions, and exclusive community access.</p>
+                <span>$599/month</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <h2>Success Stories</h2>
+        <div class="testimonial-card">
+            <p>"Alpha Trading changed my life! I went from losing money to consistently profitable in just 3 months."</p>
+            <span>- John D., Forex Trader</span>
+        </div>
+        <div class="testimonial-card" style="margin-top: 1.5rem;">
+            <p>"The mentorship program is worth every penny. The personalized feedback accelerated my learning curve."</p>
+            <span>- Sarah K., Crypto Trader</span>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="apply">
+        <h2>Apply for Mentorship</h2>
+        <form id="mentorship-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone (Optional)">
+            <select required>
+                <option value="">Select Program</option>
+                <option value="beginner">Beginner Program ($99/month)</option>
+                <option value="advanced">Advanced Program ($299/month)</option>
+                <option value="vip">VIP Program ($599/month)</option>
+            </select>
+            <textarea placeholder="Your trading experience (Optional)" rows="4"></textarea>
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">How long is the mentorship program?</button>
+            <div class="faq-answer">
+                <p>Most students complete the program in 3–6 months, but you can learn at your own pace.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Do you offer refunds?</button>
+            <div class="faq-answer">
+                <p>Yes! We offer a 14-day money-back guarantee if you're not satisfied.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What markets do you cover?</button>
+            <div class="faq-answer">
+                <p>Forex, stocks, crypto, and commodities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Alpha Trading Institute. All rights reserved.</p>
+        <div style="margin-top: 1rem;">
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-telegram"></i></a>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Form Submission (Example: Log to console + show alert)
+        document.getElementById('mentorship-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            console.log('Application Submitted:', data);
+            alert('Thank you! Your application has been submitted. We’ll contact you within 24 hours.');
+            this.reset();
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const answer = button.nextElementSibling;
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
